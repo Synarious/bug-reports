@@ -37,7 +37,7 @@ const reportConfigs = {
                 category: "System", shared: true, fields: [
                     { name: "CPU", storageName: "cpu", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD Ryzen 5 5600X", resetState: 'specific', tooltipText: "Your computer's processor model." },
                     { name: "Ram/Speed", storageName: "ramSpeed", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 16GB DDR4 3600MHz", resetState: 'specific', tooltipText: "The amount and speed of your system's RAM." },
-                    { name: "Operating System", storageName: "operatingSystem", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Windows 10", "Windows 11", "Linux", "Other"], resetState: 'specific', tooltipText: "The operating system your computer is running." },
+                    { name: "Operating System", storageName: "operatingSystem", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Windows 11", "Windows 10", "Linux", "Other"], resetState: 'specific', tooltipText: "The operating system your computer is running." },
                     { name: "GPU Model", storageName: "gpuModel", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD RX 6800 XT", resetState: 'specific', tooltipText: "Your graphics card model." },
                     { name: "GPU Driver Version", storageName: "gpuDriverVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 24.4.1", resetState: 'specific', tooltipText: "The version of your installed graphics driver." }
                 ]
