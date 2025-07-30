@@ -3,7 +3,7 @@
 
 # Features
 - Dynamic Report Forms: Select from different report templates tailored to specific issues:
-- Persistent Data Storage: Saves your system specifications and other common details to your browser's local storage. Fill them out once, and they'll be there the next time you visit.
+- Persistent Data Storage: Saves your system specifications and other common details to your browser's local storage. Fill them out once, and they'll be there the next time you visit. This data is stored locally in your browser and never is never uploaded.
 - One-Click Markdown Export: Generates a clean, pre-formatted Markdown report with a single click, ready to be pasted into Discord, forums, or GitHub.
 - Data Management: Easily reset the fields for your current report or clear all saved data entirely.
 - Theme Support: Toggle between a comfortable light and dark mode.
