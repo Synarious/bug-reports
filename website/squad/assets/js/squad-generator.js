@@ -1,4 +1,3 @@
-
 // --- FORM CONFIGURATIONS ---
 const reportConfigs = {
     performance: {
@@ -130,6 +129,31 @@ const reportConfigs = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Define the app version inside the listener to ensure it's always in scope.
+    const appVersion = "1.2"; // <-- Make sure this is a NEWER version
+
+    // --- VERSION CHECK ---
+    const storedVersion = localStorage.getItem('storageVersion');
+
+    // ADD THIS LINE FOR DEBUGGING:
+    console.log('VERSION_CHECK', { stored: storedVersion, app: appVersion });
+
+    if (storedVersion !== appVersion) {
+        console.warn(`Storage version mismatch. Found: ${storedVersion || 'none'}, Required: ${appVersion}. Wiping application data.`);
+
+        // Preserve the user's theme setting before clearing everything else.
+        const currentTheme = localStorage.getItem('bugReportTheme');
+
+        // Clear all stored data from the domain.
+        localStorage.clear();
+
+        // Now, restore the theme and set the new storage version.
+        localStorage.setItem('storageVersion', appVersion);
+        if (currentTheme) {
+            localStorage.setItem('bugReportTheme', currentTheme);
+        }
+    }
+
     // --- STATE ---
     let currentReportType = 'performance';
     let isInitialLoad = true;
@@ -197,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fieldsHtml += `<div class="col-md-4 mb-2">${renderField(playerCount)}</div>`;
                 fieldsHtml += `<div class="col-md-6 mb-2">${renderField(yourTeam)}</div>`;
                 fieldsHtml += `<div class="col-md-6 mb-2">${renderField(enemyTeam)}</div>`;
-                fieldsHtml += `<div class="col-md-6 mb-2">${renderField(mapTime)}</div>`; // Added map time
+                fieldsHtml += `<div class="col-md-6 mb-2">${renderField(mapTime)}</div>`;
 
             } else if (category.category === "Game Graphics") {
                 const displayResolution = category.fields.find(f => f.storageName === 'displayResolution');
@@ -305,6 +329,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         localStorage.setItem(config.storageKey, JSON.stringify(reportData));
         localStorage.setItem('bugReportShared', JSON.stringify(sharedData));
+        // Write the current app version to storage to verify on next load.
+        localStorage.setItem('storageVersion', appVersion);
     };
 
     const loadReportData = () => {
@@ -471,6 +497,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     exportBtn.addEventListener('click', () => {
         if (!validateForm()) return;
+
+        // When exporting, also save the current data and update the version stamp
+        // to ensure the stored data is up-to-date with what was exported.
+        saveReportData();
+
         const timestamp = Math.floor(Date.now() / 1000);
         const markdownOutput = generateMarkdown(timestamp);
         if (copyToClipboard(markdownOutput)) {
@@ -519,6 +550,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const init = () => {
+        // Because the version check runs first, any stored theme may have been wiped.
+        // We default to 'dark' if no theme is found.
         const savedTheme = localStorage.getItem('bugReportTheme') || 'dark';
         applyTheme(savedTheme);
         switchReportType('performance');
