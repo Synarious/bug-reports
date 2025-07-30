@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Run Minifier Script
-        run: node tenser-minify.js
+        run: node minify.js
 
       # Optional: Commit and push minified files
       - name: Commit minified files

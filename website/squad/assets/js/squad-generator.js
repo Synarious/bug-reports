@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        markdown += `\n-# Bug report generated with [squadbugs.syfusion.com](https://sqbug.syfusion.com/) | Import and export easily | Generated On <t:${timestamp}:F>`;
+        markdown += `\n-# Generated with [https://reporter.syfusion.com/squad/generator](https://reporter.syfusion.com/squad/generator) | Reports Made Easier <3 | Generated On <t:${timestamp}:F>`;
         return markdown;
     };
 
