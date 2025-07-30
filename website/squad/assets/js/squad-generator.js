@@ -528,7 +528,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (err) {
             console.error('Failed to copy text: ', err);
             return false;
-  _Bugs/UI Report | Squad - Bug Reporting_       } finally {
+        } finally {
             document.body.removeChild(textarea);
         }
     };
