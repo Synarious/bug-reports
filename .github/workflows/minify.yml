@@ -3,15 +3,18 @@ name: Minify JS and CSS
 on:
   push:
     branches:
-      - '*'  # Triggers on push to any branch
+      - '*'
   pull_request:
     branches:
-      - '*'  # Triggers on pull requests for any branch
+      - '*'
     paths:
       - 'website/squad/assets/js/**'
       - 'website/squad/assets/css/**'
       - 'minify.js'
       - 'package.json'
+
+permissions:
+  contents: write  # Required for the default GITHUB_TOKEN to push
 
 jobs:
   minify:
@@ -20,8 +23,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true  # ensures push works using GITHUB_TOKEN
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,8 +37,8 @@ jobs:
 
       - name: Commit and push minified files
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
           git add .
           git diff --cached --quiet || git commit -m "Auto-minified JS and CSS"
           git push
