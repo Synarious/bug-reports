@@ -1,4 +1,4 @@
-// tenser-minify.js
+// minify.js
 
 const fs = require('fs-extra');
 const path = require('path');
