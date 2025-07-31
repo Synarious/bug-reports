@@ -11,7 +11,7 @@ const reportConfigs = {
                     { name: "Framerate Lows", storageName: "framerateLows", loadValueFromStorage: true, required: false, type: "text", grayText: "Lows", resetState: 'non-specific', tooltipText: "Lowest framerate observed." },
                     { name: "Framerate Avg", storageName: "framerateAvg", loadValueFromStorage: true, required: true, type: "text", grayText: "Avg", resetState: 'non-specific', tooltipText: "Average framerate during gameplay." },
                     { name: "Framerate High", storageName: "framerateHigh", loadValueFromStorage: true, required: false, type: "text", grayText: "High", resetState: 'non-specific', tooltipText: "Highest framerate observed." },
-                    { name: "Using GPU Framegen?", storageName: "gpuFramegen", loadValueFromStorage: false, required: false, type: "toggle", resetState: 'non-specific', tooltipText: "Is hardware frame generation (e.g., DLSS 3, FSR 3) enabled?" },
+                    { name: "Using GPU Framegen?", storageName: "gpuFramegen", loadValueFromStorage: false, required: false, type: "toggle", resetState: 'non-specific', tooltipText: "Is hardware frame generation enabled?" },
                     { name: "Have you cleared cache this test?", storageName: "clearedCache", loadValueFromStorage: false, required: false, type: "toggle", resetState: 'non-specific', tooltipText: "Clearing cache can resolve many issues. Did you do this before the test?" },
                     { name: "Reproducibility", storageName: "reproducibility", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Always", "Sometimes", "Rarely", "Never"], resetState: 'non-specific', tooltipText: "How often can you reproduce this issue?" }
                 ]
@@ -20,7 +20,7 @@ const reportConfigs = {
                 category: "Game Details", shared: true, fields: [
                     { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipImage: "https://placehold.co/400x100/212529/FFF?text=Check+bottom+right" },
                     { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
-                    { name: "Map Time", storageName: "mapTime", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long had the match been going?" },
+                    { name: "Match Time", storageName: "mapTime", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long has the match/map been running for?" },
                     { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: true, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "The map layer and your coordinates, if applicable." },
                     { name: "Your Team", storageName: "yourTeam", loadValueFromStorage: false, required: true, type: "text", grayText: "e.g., US Army", resetState: 'non-specific', tooltipText: "The faction you were playing as." },
                     { name: "Enemy Team", storageName: "enemyTeam", loadValueFromStorage: false, required: true, type: "text", grayText: "e.g., Russian Forces", resetState: 'non-specific', tooltipText: "The opposing faction." }
@@ -51,10 +51,10 @@ const reportConfigs = {
         settings: [
             {
                 category: "Mapping/Asset", fields: [
-                    { name: "Describe", storageName: "describe", loadValueFromStorage: true, required: true, type: "textarea", grayText: "What you're seeing, if possible way to reproduce it.", resetState: 'non-specific', tooltipText: "Provide a detailed description of the visual or audio bug." },
+                    { name: "Describe", storageName: "describe", loadValueFromStorage: true, required: true, type: "textarea", grayText: "What are you seeing.", resetState: 'non-specific', tooltipText: "Provide a detailed description of the visual or audio bug." },
                     { name: "Can you reproduce it?", storageName: "reproduceSteps", loadValueFromStorage: true, required: false, type: "textarea", grayText: "Describe how so, or leave empty.", resetState: 'non-specific', tooltipText: "Provide steps to reproduce the issue, if known." },
                     { name: "Have you cleared cache this test?", storageName: "clearedCache", loadValueFromStorage: false, required: false, type: "toggle", resetState: 'non-specific', tooltipText: "Did you clear your game cache before observing this issue?" },
-                    { name: "Asset Type", storageName: "assetType", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Map/Textures", "Characters/Animations", "Weapons/Animations", "Sounds", "User Interface / Menus"], resetState: 'non-specific', tooltipText: "Select the type of asset that has an issue." }
+                    { name: "Asset Type", storageName: "assetType", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Map/Textures", "Characters/Animations", "Weapons/Animations", "Vehicles", "Sounds", "User Interface / Menus"], resetState: 'non-specific', tooltipText: "Select the type of asset that has an issue." }
 
                 ]
             },
@@ -62,7 +62,7 @@ const reportConfigs = {
                 category: "Game Details", shared: true, fields: [
                     { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipImage: "https://placehold.co/400x100/212529/FFF?text=Check+bottom+right" },
                     { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: false, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
-                    { name: "Map Time", storageName: "mapTime", loadValueFromStorage: false, required: false, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long had the match been going?" },
+                    { name: "Match Time", storageName: "mapTime", loadValueFromStorage: false, required: false, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long has the match/map been running for?" },
                     { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "The map layer and your coordinates, if applicable." },
                     { name: "Your Team", storageName: "yourTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., US Army", resetState: 'non-specific', tooltipText: "The faction you were playing as." },
                     { name: "Enemy Team", storageName: "enemyTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Russian Forces", resetState: 'non-specific', tooltipText: "The opposing faction." }
@@ -102,7 +102,7 @@ const reportConfigs = {
                 category: "Game Details", shared: true, fields: [
                     { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipImage: "https://placehold.co/400x100/212529/FFF?text=Check+bottom+right" },
                     { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
-                    { name: "Map Time", storageName: "mapTime", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long had the match been going?" },
+                    { name: "Match Time", storageName: "mapTime", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long has the match/map been running for?" },
                     { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "The map layer and your coordinates, if applicable." },
                     { name: "Your Team", storageName: "yourTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., US Army", resetState: 'non-specific', tooltipText: "The faction you were playing as." },
                     { name: "Enemy Team", storageName: "enemyTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Russian Forces", resetState: 'non-specific', tooltipText: "The opposing faction." }
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     resetCurrentBtn.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset the non-specific fields for this report type?')) {
+        if (confirm('Are you sure you want to reset and leave partial info, such as your system and settings?')) {
             const config = reportConfigs[currentReportType];
             localStorage.removeItem(config.storageKey);
             localStorage.removeItem(`lastCopied_${currentReportType}`);
@@ -485,16 +485,16 @@ document.addEventListener('DOMContentLoaded', function () {
             // Handle specific categories with custom layouts
             if (cat.category === "Game Details") {
                 markdown += `> - **Squad Version:** ${getVal('squadVersion')}\n`;
-                markdown += `> - **Match State:** Players \`\`${getVal('playerCount')}\`\` Map Time: \`\`${getVal('mapTime')}\`\`\n`;
+                markdown += `> - **Match State:** Players \`\`${getVal('playerCount')}\`\` Match Time Elapsed: \`\`${getVal('mapTime')}\`\`\n`;
                 markdown += `> - **Layer & Cords:** ${getVal('layerCords')}\n`;
-                markdown += `> - **Your Team:** \`\`${getVal('yourTeam')}\`\`\n`;
-                markdown += `> - **Enemy Team:** \`\`${getVal('enemyTeam')}\`\`\n`;
+                markdown += `> - **Your Team:** ${getVal('yourTeam')}\n`;
+                markdown += `> - **Enemy Team:** ${getVal('enemyTeam')}\n`;
             } else if (cat.category === "Game Graphics") {
                 const display = getVal('displayResolution');
                 const preset = getVal('selectedPreset');
                 const mods = getVal('presetModifications');
                 markdown += `> - **Display & Resolution:** ${display}\n`;
-                markdown += `> - **Select Preset:** \`\`${preset}\`\` **Modifications:** \`\`${mods}\`\`\n`;
+                markdown += `> - **Selected Preset:** \`\`${preset}\`\` **Modifications:** \`\`${mods}\`\`\n`;
             } else if (cat.category === "System") {
                 markdown += `> - **CPU:** ${getVal('cpu')}\n`;
                 markdown += `> - **Ram/Speed:** ${getVal('ramSpeed')}\n`;
@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     
-        markdown += `\n-# Generated with [reporter.syfusion.com | Maintainer Unn. Synarion](https://reporter.syfusion.com/squad/generator) | Reports Made Easier <3 | Generated On <t:${timestamp}:F>\n**Evidence Link/Attached Below**`;
+        markdown += `-# Generated with [reporter.syfusion.com | Maintainer Unn. Synarion](https://reporter.syfusion.com/squad/generator) | Reports made easier <3 | Generated on <t:${timestamp}:F>\n## Evidence Attached & Linked Below`;
         return markdown;
     };
 
