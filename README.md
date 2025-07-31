@@ -34,3 +34,4 @@
 - The default button states none.
 - Add images/animated gifs examples on how to find what is being asked.
 - Clearing cache affects the entire FQDN (domain) currently and its cache/storage, I plan to rewrite this to limit scope, unless when necessary (e.g breaking version update) so it can work on websites with unrelated storage and cache.
+- Any feedback on things to be changed, fixed, added or removed is appreciated :)
