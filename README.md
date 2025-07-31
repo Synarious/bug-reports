@@ -1,5 +1,5 @@
 # Currently Supports
-- Squad
+- [Squad](https://reporter.syfusion.com/squad/generator)
 
 # Features
 - Dynamic Report Forms: Select from different report templates tailored to specific issues:
