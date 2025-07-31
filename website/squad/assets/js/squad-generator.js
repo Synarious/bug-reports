@@ -130,7 +130,7 @@ const reportConfigs = {
 
 document.addEventListener('DOMContentLoaded', function () {
     // Define the app version inside the listener to ensure it's always in scope.
-    const appVersion = "1.2"; // <-- Make sure this is a NEWER version
+    const appVersion = "1.3"; // <-- Make sure this is a NEWER version
 
     // --- VERSION CHECK ---
     const storedVersion = localStorage.getItem('storageVersion');
