@@ -18,10 +18,10 @@ const reportConfigs = {
             },
             {
                 category: "Game Details", shared: true, fields: [
-                    { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipImage: "https://placehold.co/400x100/212529/FFF?text=Check+bottom+right" },
-                    { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
+                    { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipText: "Press ESC (look bottom right)", tooltipImage: "./assets/media/version.PNG" },
+                    { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~70", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
                     { name: "Match Time", storageName: "mapTime", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long has the match/map been running for?" },
-                    { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: true, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "The map layer and your coordinates, if applicable." },
+                    { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: true, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "Press TAB (look bottom right)", tooltipImage: "./assets/media/map.PNG" },
                     { name: "Your Team", storageName: "yourTeam", loadValueFromStorage: false, required: true, type: "text", grayText: "e.g., US Army", resetState: 'non-specific', tooltipText: "The faction you were playing as." },
                     { name: "Enemy Team", storageName: "enemyTeam", loadValueFromStorage: false, required: true, type: "text", grayText: "e.g., Russian Forces", resetState: 'non-specific', tooltipText: "The opposing faction." }
                 ]
@@ -35,8 +35,8 @@ const reportConfigs = {
             },
             {
                 category: "System", shared: true, fields: [
-                    { name: "CPU", storageName: "cpu", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD Ryzen 5 5600X", resetState: 'specific', tooltipText: "Your computer's processor model." },
-                    { name: "Ram/Speed", storageName: "ramSpeed", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 16GB DDR4 3600MHz", resetState: 'specific', tooltipText: "The amount and speed of your system's RAM." },
+                    { name: "CPU", storageName: "cpu", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD Ryzen 5 5600X", resetState: 'specific', tooltipText: "Found in task manager (windows).", tooltipImage: "./assets/media/cpu.PNG" },
+                    { name: "Ram/Speed", storageName: "ramSpeed", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 16GB DDR4 3600MHz", resetState: 'specific', tooltipText: "Found in task manager (windows).", tooltipImage: "./assets/media/ram.PNG" },
                     { name: "Operating System", storageName: "operatingSystem", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Windows 11", "Windows 10", "Linux", "Other"], resetState: 'specific', tooltipText: "The operating system your computer is running." },
                     { name: "GPU Model", storageName: "gpuModel", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD RX 6800 XT", resetState: 'specific', tooltipText: "Your graphics card model." },
                     { name: "GPU Driver Version", storageName: "gpuDriverVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 24.4.1", resetState: 'specific', tooltipText: "The version of your installed graphics driver." }
@@ -50,7 +50,7 @@ const reportConfigs = {
         storageKey: "bugReportMapping",
         settings: [
             {
-                category: "Mapping/Asset", fields: [
+                category: "Mapping/Asset/UI", fields: [
                     { name: "Describe", storageName: "describe", loadValueFromStorage: true, required: true, type: "textarea", grayText: "What are you seeing.", resetState: 'non-specific', tooltipText: "Provide a detailed description of the visual or audio bug." },
                     { name: "Can you reproduce it?", storageName: "reproduceSteps", loadValueFromStorage: true, required: false, type: "textarea", grayText: "Describe how so, or leave empty.", resetState: 'non-specific', tooltipText: "Provide steps to reproduce the issue, if known." },
                     { name: "Have you cleared cache this test?", storageName: "clearedCache", loadValueFromStorage: false, required: false, type: "toggle", resetState: 'non-specific', tooltipText: "Did you clear your game cache before observing this issue?" },
@@ -60,10 +60,10 @@ const reportConfigs = {
             },
             {
                 category: "Game Details", shared: true, fields: [
-                    { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipImage: "https://placehold.co/400x100/212529/FFF?text=Check+bottom+right" },
-                    { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: false, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
+                    { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipText: "Press ESC (look bottom right)", tooltipImage: "./assets/media/version.PNG" },
+                    { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: false, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~70", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
                     { name: "Match Time", storageName: "mapTime", loadValueFromStorage: false, required: false, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long has the match/map been running for?" },
-                    { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "The map layer and your coordinates, if applicable." },
+                    { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "Press TAB (look bottom right)", tooltipImage: "./assets/media/map.PNG" },
                     { name: "Your Team", storageName: "yourTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., US Army", resetState: 'non-specific', tooltipText: "The faction you were playing as." },
                     { name: "Enemy Team", storageName: "enemyTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Russian Forces", resetState: 'non-specific', tooltipText: "The opposing faction." }
                 ]
@@ -77,9 +77,9 @@ const reportConfigs = {
             },
             {
                 category: "System", shared: true, fields: [
-                    { name: "CPU", storageName: "cpu", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD Ryzen 5 5600X", resetState: 'specific', tooltipText: "Your computer's processor model." },
-                    { name: "Ram/Speed", storageName: "ramSpeed", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 16GB DDR4 3600MHz", resetState: 'specific', tooltipText: "The amount and speed of your system's RAM." },
-                    { name: "Operating System", storageName: "operatingSystem", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Windows 10", "Windows 11", "Linux", "Other"], resetState: 'specific', tooltipText: "The operating system your computer is running." },
+                    { name: "CPU", storageName: "cpu", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD Ryzen 5 5600X", resetState: 'specific', tooltipText: "Found in task manager (windows).", tooltipImage: "./assets/media/cpu.PNG" },
+                    { name: "Ram/Speed", storageName: "ramSpeed", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 16GB DDR4 3600MHz", resetState: 'specific', tooltipText: "Found in task manager (windows).", tooltipImage: "./assets/media/ram.PNG" },
+                    { name: "Operating System", storageName: "operatingSystem", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Windows 11", "Windows 10", "Linux", "Other"], resetState: 'specific', tooltipText: "The operating system your computer is running." },
                     { name: "GPU Model", storageName: "gpuModel", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD RX 6800 XT", resetState: 'specific', tooltipText: "Your graphics card model." },
                     { name: "GPU Driver Version", storageName: "gpuDriverVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 24.4.1", resetState: 'specific', tooltipText: "The version of your installed graphics driver." }
                 ]
@@ -100,10 +100,10 @@ const reportConfigs = {
             },
             {
                 category: "Game Details", shared: true, fields: [
-                    { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipImage: "https://placehold.co/400x100/212529/FFF?text=Check+bottom+right" },
-                    { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
+                    { name: "Squad Version", storageName: "squadVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., v7.0", resetState: 'specific', tooltipText: "Press ESC (look bottom right)", tooltipImage: "./assets/media/version.PNG" },
+                    { name: "Player Count", storageName: "playerCount", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["~10", "~20", "~40", "~60", "~70", "~80", "~90", "~98+"], resetState: 'non-specific', tooltipText: "Approximate number of players on the server." },
                     { name: "Match Time", storageName: "mapTime", loadValueFromStorage: false, required: true, type: "dropdown", dropdownOptions: ["Under 10min", "10-15min", "15-20min", "20-30min", "30-40min", "40-60min", "60+ min"], resetState: 'non-specific', tooltipText: "How long has the match/map been running for?" },
-                    { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "The map layer and your coordinates, if applicable." },
+                    { name: "Layer & Cords", storageName: "layerCords", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Yehorivka RAAS v2, G5", resetState: 'non-specific', tooltipText: "Press TAB (look bottom right)", tooltipImage: "./assets/media/map.PNG" },
                     { name: "Your Team", storageName: "yourTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., US Army", resetState: 'non-specific', tooltipText: "The faction you were playing as." },
                     { name: "Enemy Team", storageName: "enemyTeam", loadValueFromStorage: false, required: false, type: "text", grayText: "e.g., Russian Forces", resetState: 'non-specific', tooltipText: "The opposing faction." }
                 ]
@@ -117,9 +117,9 @@ const reportConfigs = {
             },
             {
                 category: "System", shared: true, fields: [
-                    { name: "CPU", storageName: "cpu", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD Ryzen 5 5600X", resetState: 'specific', tooltipText: "Your computer's processor model." },
-                    { name: "Ram/Speed", storageName: "ramSpeed", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 16GB DDR4 3600MHz", resetState: 'specific', tooltipText: "The amount and speed of your system's RAM." },
-                    { name: "Operating System", storageName: "operatingSystem", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Windows 10", "Windows 11", "Linux", "Other"], resetState: 'specific', tooltipText: "The operating system your computer is running." },
+                    { name: "CPU", storageName: "cpu", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD Ryzen 5 5600X", resetState: 'specific', tooltipText: "Found in task manager (windows).", tooltipImage: "./assets/media/cpu.PNG" },
+                    { name: "Ram/Speed", storageName: "ramSpeed", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 16GB DDR4 3600MHz", resetState: 'specific', tooltipText: "Found in task manager (windows).", tooltipImage: "./assets/media/ram.PNG" },
+                    { name: "Operating System", storageName: "operatingSystem", loadValueFromStorage: true, required: true, type: "dropdown", dropdownOptions: ["Windows 11", "Windows 10", "Linux", "Other"], resetState: 'specific', tooltipText: "The operating system your computer is running." },
                     { name: "GPU Model", storageName: "gpuModel", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., AMD RX 6800 XT", resetState: 'specific', tooltipText: "Your graphics card model." },
                     { name: "GPU Driver Version", storageName: "gpuDriverVersion", loadValueFromStorage: true, required: true, type: "text", grayText: "e.g., 24.4.1", resetState: 'specific', tooltipText: "The version of your installed graphics driver." }
                 ]
